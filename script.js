@@ -81,7 +81,7 @@ class Field extends React.Component {
       '-s, -save................Saves the setting to localStorage.'] },
 
     {
-      command: 'gui',
+      command: 'z-gui',
       purpose: 'Launches Graphical Interface Mode.' },
     {
       command: 'time',
@@ -361,7 +361,7 @@ class Field extends React.Component {
       return this.setState(state => ({
         fieldHistory: [...state.fieldHistory, this.giveError(!validParams ? 'bp' : 'bf', !validParams ? { cmd: 'THEME', noAccepted: 1 } : 'THEME')] }));
 
-    } else if (cmd === 'gui') {
+    } else if (cmd === 'z-gui') {
       return this.setState(state => ({
         fieldHistory: [...state.fieldHistory, { text: 'Launching Graphical Interface...', hasBuffer: true }] }),
       () => window.open('https://kixpru.github.io/P_K-Redirect.github.io/'));
