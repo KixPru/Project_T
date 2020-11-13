@@ -21,7 +21,7 @@ const App = () => {
 const Terminal = ({ theme, setTheme }) => {
   const [maximized, setMaximized] = React.useState(false);
   const [title, setTitle] = React.useState('Terminal');
-  const handleClose = () => window.location.href = 'https://kixpru.keybase.pub/index.html';
+  const handleClose = () => window.location.href = 'https://kixpru.github.io/P_K-Redirect.github.io/';
   const handleMinMax = () => {
     setMaximized(!maximized);
     document.querySelector('#field').focus();
@@ -338,7 +338,7 @@ class Field extends React.Component {
     } else if (cmd === 'cmd') {
       return this.setState(state => ({
         fieldHistory: [...state.fieldHistory, { text: 'Launching new instance of the Terminal...', hasBuffer: true }] }),
-      () => window.open('https://kixpru.keybase.pub/TEST-AREA/terminal-style-portfolio-in-reactjs/index.html'));
+      () => window.open('https://kixpru.keybase.pub/terminal/index.html'));
     } else if (cmd === 'theme') {
       const { setTheme } = this.props;
       const validParams = params.length === 1 && ['d', 'dark', 'l', 'light'].some(s => s === params[0]);
@@ -363,9 +363,8 @@ class Field extends React.Component {
 
     } else if (cmd === 'gui') {
       return this.setState(state => ({
-        fieldHistory: [...state.fieldHistory, {
-          hasBuffer: true }] }),
-      () => window.open(params.length ? `https://kixpru.keybase.pub/index.html'));
+        fieldHistory: [...state.fieldHistory, { text: 'Launching new Graphical Interface...', hasBuffer: true }] }),
+      () => window.open(params.length ? `https://kixpru.github.io/P_K-Redirect.github.io/'));
     }
 
     } else if (cmd === 'time') {
@@ -452,7 +451,7 @@ class Field extends React.Component {
     } else if (cmd === 'projects') {
       return this.setState(state => ({
         fieldHistory: [...state.fieldHistory, { text: [
-          'To view any of these projects live or their source files, type PROJECT <TITLE>, e.g. PROJECT Minesweeper.',
+          'To view any of these projects live or their source files, type PROJECT <TITLE>, e.g. PROJECT K.',
           '',
           'project-1',
           'Dolor pulvinar etiam.',
