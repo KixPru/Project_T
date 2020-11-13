@@ -362,7 +362,12 @@ class Field extends React.Component {
         fieldHistory: [...state.fieldHistory, this.giveError(!validParams ? 'bp' : 'bf', !validParams ? { cmd: 'THEME', noAccepted: 1 } : 'THEME')] }));
 
     } else if (cmd === 'gui') {
-      return window.location.href = 'https://kixpru.keybase.pub/index.html';
+      return this.setState(state => ({
+        fieldHistory: [...state.fieldHistory, {
+          hasBuffer: true }] }),
+      () => window.open(params.length ? `https://kixpru.keybase.pub/index.html'));
+    }
+
     } else if (cmd === 'time') {
       return this.setState(state => ({
         fieldHistory: [...state.fieldHistory, { text: `The current time is: ${new Date(Date.now()).toLocaleTimeString()}`, hasBuffer: true }] }));
