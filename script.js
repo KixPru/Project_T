@@ -366,6 +366,10 @@ class Field extends React.Component {
         fieldHistory: [...state.fieldHistory, { text: 'Launching Graphical Interface...', hasBuffer: true }] }),
       () => window.open('https://kixpru.github.io/P_K-Redirect.github.io/'));
 
+    } else if (cmd === 'time') {
+      return this.setState(state => ({
+        fieldHistory: [...state.fieldHistory, { text: `The current time is: ${new Date(Date.now()).toLocaleTimeString()}`, hasBuffer: true }] }));
+
     } else if (cmd === 'about') {
       return this.setState(state => ({
         fieldHistory: [...state.fieldHistory, { text: [
